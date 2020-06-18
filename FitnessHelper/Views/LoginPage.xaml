@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FitnessHelper.Views.LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="login.png" Margin="10"></Image>
+            <Label Grid.Row="1" Text="Вход" Margin="10" FontSize="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Entry Grid.Row="2" Text="" Placeholder="Email" Margin="30,10,30,10"></Entry>
+            <Entry Grid.Row="3" Text="" Placeholder="Пароль" IsPassword="True" Margin="30,10,30,10"></Entry>
+            <Button Grid.Row="4" Text="Войти" Clicked="Button_Clicked" Margin="30,10,30,10" BackgroundColor="LightBlue" />
+            <Label Grid.Row="5" Text="Забыли пароль?" Margin="10" FontSize="12" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
