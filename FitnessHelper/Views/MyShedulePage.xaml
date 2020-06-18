@@ -16,7 +16,7 @@
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <Label Grid.Row="1" Text="Мое расписание" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <DatePicker Grid.Row="2"></DatePicker>
+            <Button Grid.Row="3" Text="Все тренировки" Clicked="Button_Clicked" WidthRequest="100"></Button>
             <!--Image Grid.Row="0" Source="login.png"></>
             <Label Grid.Row="1" Text="Вход" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
             <Entry Grid.Row="2" Text="" Placeholder="Email"></Entry>

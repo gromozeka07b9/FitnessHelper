@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FitnessHelper.Views.WorkoutsPage" Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HeightRequest="60">
+                <Image Source="baseline_arrow_back_black_48.png" WidthRequest="40" HorizontalOptions="Start">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Среда, 32 февраля" FontSize="20" ></Label>
+            </StackLayout>
+            <SearchBar Placeholder="Поиск" BackgroundColor="LightBlue"></SearchBar>
+            <ListView ItemsSource="{Binding WorkoutsList}" x:Name="lstWorkouts" Margin="20" RowHeight="150">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="0,0,0,10">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <CheckBox></CheckBox>
+                                    <Label Text="{Binding Trainer}" FontSize="20" FontAttributes="Bold"></Label>
+                                    <StackLayout HorizontalOptions="FillAndExpand"></StackLayout>
+                                    <Label Text="{Binding TrainDateTimeString}" FontSize="20" HorizontalTextAlignment="End"></Label>
+                                </StackLayout>
+                                <Label Text="{Binding Name}" FontSize="20"></Label>
+                                <Label Text="{Binding Description}" FontSize="13"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
