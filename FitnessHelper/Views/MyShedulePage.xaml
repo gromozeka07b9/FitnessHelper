@@ -4,25 +4,46 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="FitnessHelper.Views.MyShedulePage" NavigationPage.HasNavigationBar="False">
+             x:Class="FitnessHelper.Views.MyShedulePage" NavigationPage.HasNavigationBar="False" Appearing="ContentPage_Appearing">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="4*" />
                 <RowDefinition Height="4*" />
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="5*" />
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="1" Text="Мое расписание" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Button Grid.Row="3" Text="Все тренировки" Clicked="Button_Clicked" WidthRequest="100"></Button>
-            <!--Image Grid.Row="0" Source="login.png"></>
-            <Label Grid.Row="1" Text="Вход" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Entry Grid.Row="2" Text="" Placeholder="Email"></Entry>
-            <Entry Grid.Row="3" Text="" Placeholder="Пароль" IsPassword="True"></Entry>
-            <Button Grid.Row="4" Text="Войти" />
-            <Label Grid.Row="5" Text="Забыли пароль?" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" /-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="Мое расписание" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="18" />
+            <ListView Grid.Row="1" Grid.Column="1" x:Name="lstCalendarDate" Margin="0" HorizontalOptions="End">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="0">
+                                <Label Text="{Binding .}" FontSize="20"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView Grid.Row="1" Grid.Column="2" x:Name="lstCalendarTime" Margin="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="0">
+                                <Label Text="{Binding .}" FontSize="20"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Image Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Source="train1.png"></Image>
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Text="Мои тренировки" Clicked="Button_Clicked" Margin="20,0,20,0"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

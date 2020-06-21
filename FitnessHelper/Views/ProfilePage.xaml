@@ -8,20 +8,32 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*" />
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="5*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="1" Text="Профиль" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <!--Image Grid.Row="0" Source="login.png"></>
-            <Label Grid.Row="1" Text="Вход" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Entry Grid.Row="2" Text="" Placeholder="Email"></Entry>
-            <Entry Grid.Row="3" Text="" Placeholder="Пароль" IsPassword="True"></Entry>
-            <Button Grid.Row="4" Text="Войти" />
-            <Label Grid.Row="5" Text="Забыли пароль?" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" /-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="1" Text="Профиль" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="18" />
+            <Image Grid.Row="1" Grid.Column="1" Source="avatar1.png" Aspect="AspectFit"></Image>
+            <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <Label  Text="Имя пользователя" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="LightGray" FontSize="17" />
+                <Label  Text="Тестов Тест Тестович" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20" />
+            </StackLayout>
+            <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+                <Label  Text="Email" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="LightGray" FontSize="17" />
+                <Label  Text="testovtest@test.com" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20"/>
+            </StackLayout>
+            <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+                <Label  Text="Телефон" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="LightGray" FontSize="17"/>
+                <Label  Text="+81212121212" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20"/>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

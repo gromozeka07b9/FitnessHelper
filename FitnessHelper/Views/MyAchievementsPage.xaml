@@ -8,20 +8,61 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*" />
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="5*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="1" Text="Мои достижения" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <!--Image Grid.Row="0" Source="login.png"></>
-            <Label Grid.Row="1" Text="Вход" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Entry Grid.Row="2" Text="" Placeholder="Email"></Entry>
-            <Entry Grid.Row="3" Text="" Placeholder="Пароль" IsPassword="True"></Entry>
-            <Button Grid.Row="4" Text="Войти" />
-            <Label Grid.Row="5" Text="Забыли пароль?" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" /-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="1" Text="Мои достижения" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="18" />
+            <!--Image Grid.Row="1" Grid.Column="1" Source="avatar1.png" Aspect="AspectFit"></-->
+            <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <Label  Text="867" VerticalOptions="End" HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="50" />
+                <StackLayout VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" >
+                    <Image Source="ic_like_on_1.png" VerticalOptions="Center"></Image>
+                    <Label  Text="очков" FontAttributes="Bold" FontSize="20" VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <Frame CornerRadius="10" BackgroundColor="LightBlue">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+                        <Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+                        <!--Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></-->
+                        <StackLayout HorizontalOptions="Fill"></StackLayout>
+                        <Label  Text="Мастер отжиманий" VerticalOptions="CenterAndExpand" HorizontalOptions="End" FontAttributes="Bold" FontSize="16" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+                <Frame CornerRadius="10" BackgroundColor="LightBlue">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+                        <Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+                        <Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+                        <StackLayout HorizontalOptions="Fill"></StackLayout>
+                        <Label  Text="Мастер йога" VerticalOptions="CenterAndExpand" HorizontalOptions="End" FontAttributes="Bold" FontSize="16" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+                <Frame CornerRadius="10" BackgroundColor="LightBlue">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+                        <Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+                        <Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+                        <Image Source="baseline_star_border_white_24.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+                        <StackLayout HorizontalOptions="Fill"></StackLayout>
+                        <Label  Text="Пробежал 100 км" VerticalOptions="CenterAndExpand" HorizontalOptions="End" FontAttributes="Bold" FontSize="16" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
