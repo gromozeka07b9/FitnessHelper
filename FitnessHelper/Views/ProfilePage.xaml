@@ -9,7 +9,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="3*" />
+                <RowDefinition Height="4*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
@@ -33,6 +33,10 @@
             <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
                 <Label  Text="Телефон" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="LightGray" FontSize="17"/>
                 <Label  Text="+81212121212" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20"/>
+            </StackLayout>
+            <StackLayout Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Padding="5">
+                <Label  Text="Для обратной связи пишите на почтовый адрес:" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" TextColor="LightGray" FontSize="10"/>
+                <Label  Text="multipower@mail.ru" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="10"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

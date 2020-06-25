@@ -8,7 +8,8 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="5*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
@@ -16,11 +17,12 @@
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <Image Grid.Row="0" Source="login.png" Margin="10"></Image>
-            <Label Grid.Row="1" Text="Вход" Margin="10" FontSize="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Entry Grid.Row="2" Text="" Placeholder="Email" Margin="30,10,30,10"></Entry>
-            <Entry Grid.Row="3" Text="" Placeholder="Пароль" IsPassword="True" Margin="30,10,30,10"></Entry>
-            <Button Grid.Row="4" Text="Войти" Clicked="Button_Clicked" Margin="30,10,30,10" BackgroundColor="LightBlue" />
-            <Label Grid.Row="5" Text="Забыли пароль?" Margin="10" FontSize="12" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Label Grid.Row="1" Text="MultiPower" Margin="10" FontSize="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Label Grid.Row="2" Text="Вход" Margin="10" FontSize="25" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Entry Grid.Row="3" Text="" Placeholder="Email" Margin="30,10,30,10"></Entry>
+            <Entry Grid.Row="4" Text="" Placeholder="Пароль" IsPassword="True" Margin="30,10,30,10"></Entry>
+            <Button Grid.Row="5" Text="Войти" Clicked="Button_Clicked" Margin="30,10,30,10" BackgroundColor="LightBlue" />
+            <Label Grid.Row="6" Text="Забыли пароль?" Margin="10" FontSize="12" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

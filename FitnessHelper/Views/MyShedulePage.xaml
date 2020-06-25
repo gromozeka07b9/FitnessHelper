@@ -43,7 +43,14 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Image Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Source="train1.png"></Image>
-            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Text="Мои тренировки" Clicked="Button_Clicked" Margin="20,0,20,0"></Button>
+            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" CornerRadius="10" Margin="50,00,50,5">
+                <Label Text="Мои тренировки" FontSize="20" HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Button_Clicked"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+            <!--Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Text="Мои тренировки" Clicked="Button_Clicked" Margin="20,0,20,0"></-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -38,6 +38,11 @@ namespace FitnessHelper.Views
         {
             Navigation.PopModalAsync();
         }
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
     }
 
     public class Workout

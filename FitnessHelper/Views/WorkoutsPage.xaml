@@ -34,6 +34,13 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Frame CornerRadius="10" Margin="50">
+                <Label Text="Сохранить" FontSize="20" HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
