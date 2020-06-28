@@ -9,8 +9,8 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="4*" />
-                <RowDefinition Height="4*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="5*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -20,7 +20,18 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="Мое расписание" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="18" />
-            <ListView Grid.Row="1" Grid.Column="1" x:Name="lstCalendarDate" Margin="0" HorizontalOptions="End">
+            <ListView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lstCalendarDate" Margin="0" HorizontalOptions="End" HeightRequest="20" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="0">
+                                <Label Text="{Binding .}" FontSize="24" HorizontalTextAlignment="Center"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--ListView Grid.Row="1" Grid.Column="2" x:Name="lstCalendarTime" Margin="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -30,21 +41,38 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
-            <ListView Grid.Row="1" Grid.Column="2" x:Name="lstCalendarTime" Margin="0">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Margin="0">
-                                <Label Text="{Binding .}" FontSize="20"></Label>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Image Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Source="train1.png"></Image>
-            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" CornerRadius="10" Margin="50,00,50,5">
-                <Label Text="Мои тренировки" FontSize="20" HorizontalOptions="Center">
+            </-->
+            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Padding="5" CornerRadius="10" Margin="10,5,10,5">
+                <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <!--Image Source="train1.png" IsVisible="false"></-->
+                    <StackLayout HorizontalOptions="Fill" VerticalOptions="FillAndExpand">
+                        <ListView ItemsSource="{Binding WorkoutsList}" x:Name="lstWorkouts" Margin="0" RowHeight="40">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Margin="0,0,0,10">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                                <Label Text="{Binding Trainer}" FontSize="16" FontAttributes="Bold"></Label>
+                                                <StackLayout HorizontalOptions="FillAndExpand"></StackLayout>
+                                                <Label Text="{Binding TrainDateTimeString}" FontSize="16" HorizontalTextAlignment="End"></Label>
+                                            </StackLayout>
+                                            <Label Text="{Binding Name}" FontSize="16"></Label>
+                                            <Label Text="{Binding Description}" FontSize="9"></Label>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Fill" VerticalOptions="FillAndExpand" IsVisible="False">
+                        <Label Text="На этот день тренировки не выбраны" FontSize="24" HorizontalOptions="Center" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                    </StackLayout>
+                </StackLayout>
+                
+            </Frame>
+            
+            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" CornerRadius="10" Margin="10,5,10,5" Padding="5">
+                <Label Text="Все тренировки" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Button_Clicked"></TapGestureRecognizer>
                     </Label.GestureRecognizers>

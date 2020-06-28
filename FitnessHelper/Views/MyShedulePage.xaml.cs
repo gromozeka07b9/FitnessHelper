@@ -12,6 +12,7 @@ namespace FitnessHelper.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyShedulePage : ContentPage
     {
+        List<Workout> _wrk = new List<Workout>();
         public MyShedulePage()
         {
             InitializeComponent();
@@ -24,8 +25,27 @@ namespace FitnessHelper.Views
 
         private void ContentPage_Appearing(object sender, EventArgs e)
         {
+            if(Application.Current.Properties.ContainsKey("trainings"))
+            {
+                WorkoutsList = (List<Workout>)Application.Current.Properties["trainings"];
+            }
+
             lstCalendarDate.ItemsSource = Dates;
-            lstCalendarTime.ItemsSource = Times;
+            lstCalendarDate.SelectedItem = Dates[10];
+            //lstCalendarTime.ItemsSource = Times;
+            lstWorkouts.ItemsSource = WorkoutsList;
+        }
+
+        public List<Workout> WorkoutsList
+        {
+            set
+            {
+                _wrk = value;
+            }
+            get
+            {
+                return _wrk;
+            }
         }
 
         private List<String> Dates
