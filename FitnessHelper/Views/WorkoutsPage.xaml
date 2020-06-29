@@ -56,8 +56,8 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Frame Grid.Row="4" CornerRadius="10" Margin="10" Padding="10">
-                <Label Text="Сохранить" FontSize="18" HorizontalOptions="Center">
+            <Frame Grid.Row="4" CornerRadius="10" Margin="10" Padding="5">
+                <Label Text="Сохранить" FontSize="16" HorizontalOptions="Center">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
                     </Label.GestureRecognizers>

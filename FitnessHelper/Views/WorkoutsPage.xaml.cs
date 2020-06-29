@@ -49,11 +49,22 @@ namespace FitnessHelper.Views
         private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
             List<Workout> globalList = new List<Workout>();
-            foreach(var item in _wrk)
+            if (Application.Current.Properties.ContainsKey(globalKey))
+            {
+                object list;
+                Application.Current.Properties.TryGetValue(globalKey, out list);
+                if (list != null)
+                {
+                    globalList = (List<Workout>)list;
+                }
+            }
+
+            foreach (var item in _wrk)
             {
                 if(item.Checked)
                 {
-                    globalList.Add(new Workout() { Name = item.Name, Description = item.Description, TrainDateTime = item.TrainDateTime, Trainer = item.Trainer });
+                    var dt = new DateTime(calendarControl.SelectedDate.Year, calendarControl.SelectedDate.Month, calendarControl.SelectedDate.Day, item.TrainDateTime.Hour, item.TrainDateTime.Minute, 0);
+                    globalList.Add(new Workout() { Name = item.Name, Description = item.Description, TrainDateTime = dt, Trainer = item.Trainer });
                 }
             }
             if(Application.Current.Properties.ContainsKey(globalKey))
@@ -82,6 +93,13 @@ namespace FitnessHelper.Views
             get
             {
                 return TrainDateTime.ToString("t");
+            }
+        }
+        public string TrainDateTimeStringFull
+        {
+            get
+            {
+                return TrainDateTime.ToString("MMM dd, ddd");
             }
         }
         public string Description { get; set; }

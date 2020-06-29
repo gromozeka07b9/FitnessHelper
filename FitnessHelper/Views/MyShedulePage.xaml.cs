@@ -30,9 +30,10 @@ namespace FitnessHelper.Views
                 WorkoutsList = (List<Workout>)Application.Current.Properties["trainings"];
             }
 
-            lstCalendarDate.ItemsSource = Dates;
-            lstCalendarDate.SelectedItem = Dates[10];
+            //lstCalendarDate.ItemsSource = Dates;
+            //lstCalendarDate.SelectedItem = Dates[10];
             //lstCalendarTime.ItemsSource = Times;
+            lstWorkouts.ItemsSource = null;
             lstWorkouts.ItemsSource = WorkoutsList;
         }
 
@@ -100,6 +101,12 @@ namespace FitnessHelper.Views
                 times.Add("21:00");
                 return times;
             }
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            //var selectedDate = lstCalendarDate.SelectedItem;
+            lstWorkouts.ItemsSource = WorkoutsList;
         }
     }
 }
